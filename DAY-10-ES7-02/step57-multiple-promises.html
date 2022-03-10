@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let asyncCall1 = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Response from async call 1");
+                    }else{
+                        reject("Reject from asyncCall 1");
+                    }
+                },1000);
+            })
+        };
+        
+        
+        let asyncCall2 = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Response from async call 2");
+                    }else{
+                        reject("Reject from asyncCall 2");
+                    }
+                },2000);
+            })
+        };
+        
+        
+        
+        let asyncCall3 = function(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Response from async call 3");
+                    }else{
+                        reject("Reject from asyncCall 3");
+                    }
+                },3000);
+            })
+        };
+
+        //Promise all
+        Promise
+        .all([asyncCall1() , asyncCall2() , asyncCall3()])
+        .then((res)=> console.log(res))
+        .catch((error)=> console.log(error))
+        .finally(()=> console.log("All promises are complete"))
+
+        //Promise.any => 
+        Promise
+        .any([asyncCall1() , asyncCall2() , asyncCall3()])
+        .then((res)=> console.log(res))
+        .catch((error)=> console.log(error))
+        .finally(()=> console.log("one promises are complete"))
+
+        // Promise.race => gives output which is faster in time[1000 milisec is fastest so it will show]
+        Promise
+        .race([asyncCall1() , asyncCall2() , asyncCall3()])
+        .then((res)=> console.log(res))
+        .catch((error)=> console.log(error))
+        .finally(()=> console.log(" promises race is complete"))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
