@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Functions</title>
+    <style>
+        
+    li{
+        background-color: rgb(107, 126, 230);  
+        list-style-type: none;
+        padding:10px;
+        display: inline;
+    }
+    button{
+        margin-right:10px;
+        margin-top: 10px;
+        background-color: rgb(221, 201, 241);
+        height: 40px;
+        
+    }
+    </style>
+    
+</head>
+<body>
+   
+</body>
+<script>
+    var arr = ['1','2','3','4','5'];
+    var arr2 = ["Harshal","Patil","a","b"];
+    document.write("<h3> Array 1 : </h3>");
+    for(i=0;i<arr.length;i++)
+    {
+        document.write("<li>" + arr[i] + "</li> ");
+    }
+    document.write("<h3> Array 2 :</h3>");
+    for(i=0;i<arr2.length;i++)
+    {
+        document.write("<li>" + arr2[i] + "</li> ");
+    }
+    document.write("<h2>Functions:</h2>");
+    document.write("<button onclick='arraytolocalstring()'>coverting to local string</button>");
+    document.write("<button onclick='con()'>Concat</button>");
+    document.write("<button onclick='convertString()'>Convert to String</button>");
+    document.write("<button onclick='last()'>Get Last Element of Array</button>");
+    document.write("<button onclick='first()'>Get First Element of Array</button>");
+    document.write("<button onclick='addLast()'>Add Element at last</button>");
+    document.write("<button onclick='addFirst()'>Add Element at Start</button>");
+    document.write("<button onclick='slice()'>Slice the array</button>");
+    document.write("<button onclick='rev()'>Reverse the array</button>");
+    document.write("<button onclick='arrange()'>Sort the array</button>");
+   
+   
+    function con(){
+    document.write("<h3> Concatenate Array:</h3>")
+    var arr3 = arr.concat(arr2);
+    for(i=0;i<arr3.length;i++)
+    {
+        document.write(arr3[i] + " ");
+    }
+    document.close();
+    }
+    function convertString(){
+        var arr3 = arr.join(' ');
+        document.write(arr3); 
+        var arr4 = arr2.join(' ');
+        document.write(arr4);
+        document.close();
+
+    }
+    function last(){
+        document.write("<h3>Last Element of first array is:</h3>");
+        document.write(arr.pop());
+        document.write("<h3>Last Element of Second array is:</h3>");
+        document.write(arr2.pop());  
+        document.close(); 
+    }
+    function first(){
+        document.write("<h3>First Element is:</h3>");
+        document.write(arr.shift());
+        document.write("<h3>First Element is:</h3>");
+        document.write(arr2.shift());   
+        document.close();
+    }
+    function addLast(){
+        value = prompt("Enter the value ");
+        arr.push(value);
+        var arr3 = arr.join(' ');
+        document.write("<h3>first array is: </h3>");
+        document.write(arr3 + "<br>");
+
+        value2 = prompt("Enter the value ");
+        arr2.push(value2);
+        var arr4 = arr2.join(' ');
+        document.write("<h3>Second array is: </h3>");
+        document.write(arr4 +"<br>");
+        document.close();
+
+    }
+    function addFirst()
+    {
+        value = prompt("Enter the value ");
+        arr.unshift(value);
+        var arr3 = arr.join(' ');
+        document.write("<h3>first array is: </h3>");
+        document.write(arr3 + "<br>");
+
+        value2 = prompt("Enter the value ");
+        arr2.unshift(value2);
+        var arr4 = arr2.join(' ');
+        document.write("<h3>Second array is: </h3>");
+        document.write(arr4 +"<br>");
+        document.close();
+
+    }
+    function slice(){
+        value1 = prompt("Enter the starting index for slicing the array");
+        value2 = prompt("Enter the ending index for slicing the array");
+        var arr3 = arr.slice(value1,value2);
+        document.write("<h3>first array after slicing is: </h3>");
+        document.write(arr3 + "<br>");
+        document.close();
+    }
+ 
+    function rev(){
+      
+        document.write(arr.reverse() + "<br>");
+        document.close();
+    }
+   function arrange(){
+    
+        document.write(arr2.sort() + "<br>");
+        document.close();
+   }
+   function arraytostring(){
+ 
+        document.write(arr2.toString() + "<br>");
+        document.close();  
+   }
+   
+    document.close();
+</script>
+</html>
