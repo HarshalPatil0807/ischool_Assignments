@@ -10,7 +10,7 @@
             let qCat = document.getElementById('q-cat');
             let cat = qCat.value;
 
-            let nOption = `<option value="${cat}">"${cat}"</option>`;
+            let nOption = `<option value="${cat}">${cat}</option>`;
 
             let element = document.getElementById("select-cat");
             element.innerHTML += nOption;
@@ -19,7 +19,7 @@
             let qDom = document.getElementById('q-dom');
             let dom = qDom.value;
 
-            let nOption = `<option value="${dom}">"${dom}"</option>`;
+            let nOption = `<option value="${dom}">${dom}</option>`;
 
             let element = document.getElementById("select-dom");
             element.innerHTML += nOption;
@@ -34,9 +34,9 @@
             var element = document.getElementById("answers");
             for(let i= 1; i<=val; i++)
             {
-                let ansLabel = `<label for="ans-${i}">Answer-${i} :</label>`;
+                let ansLabel = `<label for="ans-${i}">Answer Score-${i} :</label>`;
                 let ansInput = `<input id="ans-${i}"/><br>`;
-                let pointLabel = `<label for="point-${i}">Point :</label>`;
+                let pointLabel = `<label for="point-${i}">Answer Choice :</label>`;
                 let pointInput = `<input id="point-${i}"/><br><br>`;
                 element.innerHTML += ansLabel;
                 element.innerHTML += ansInput;
